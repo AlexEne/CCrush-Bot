@@ -3,6 +3,7 @@ A python bot that plays Candy Crush.
 Due to lack of time when I coded this I warn you that it's full of hardcoded stuff :).
 
 This is how it works: 
+
 1. Take a screenshot of the desktop
 2. Extract the game board from it
 3. From that game board extract each cell
