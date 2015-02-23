@@ -19,7 +19,6 @@ class SimpleSolver:
         self.chocolate = [12]
         self.game_board = None
         self.potential_start_coords = set()
-        pass
 
     def get_score(self, candy_type):
         if candy_type in self.simple_candies:
