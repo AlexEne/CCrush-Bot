@@ -14,3 +14,6 @@ This is how it works:
 8. Goto 1 :)
 
 The main problem now is the fact that I hardcoded the position of the board in the screenshot. You need to ajust the offsets of it in order to match the ones for your browser and screen size.
+
+
+You can watch it in action here: https://www.youtube.com/watch?v=18vqQOPlvO4
