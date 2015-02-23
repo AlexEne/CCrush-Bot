@@ -88,12 +88,12 @@ def grab_board():
 
     #img = Image.open('board.bmp')
     img = img.crop(board_box)
-    img.save('board.bmp')
+    #img.save('board.bmp')
     for y in range(0, 9):
         for x in range(0, 9):
             cell_box = (x*cell_size[0], y*cell_size[1], (x+1)*cell_size[0], (y+1)*cell_size[1])
             cell = img.crop(cell_box)
-            cell.save('Cells/{0}_{1}.bmp'.format(y, x))
+            #cell.save('Cells/{0}_{1}.bmp'.format(y, x))
             game_board[y][x] = recognizer.predict(cell)
 
     dbg.print_board(game_board)

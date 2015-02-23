@@ -198,21 +198,3 @@ class SimpleSolver:
 
         return max_score, chosen_move
 
-    def solve_board2(self, board, depth=0):
-        max_score = 0
-        chosen_move = []
-        self.game_board = board
-        for i in range(0, 8):
-            for j in range(0, 8):
-                possible_directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-                for d in possible_directions:
-                    score, move, b = self.check_direction((i, j), d)
-                    if score > 0:
-                        if depth == 0:
-                            s, m = self.solve_board(b)
-                            if s + score >= max_score:
-                                max_score = s+score
-                                chosen_move = move
-
-        return max_score, chosen_move
-
