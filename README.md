@@ -17,4 +17,5 @@ The main problem now is the fact that I hardcoded the position of the board in t
 
 
 You can watch it in action here: https://www.youtube.com/watch?v=18vqQOPlvO4
+
 There is a more in-depth explanation about how it works here: http://www.clickalot.me/2015/05/candy-crush-bot/
