@@ -15,7 +15,7 @@ This is how it works:
 
 The main problem now is the fact that I hardcoded the position of the board in the screenshot. You need to ajust the offsets of it in order to match the ones for your browser and screen size.
 
-It works with python 2.7 and needs the libraries: sklearn, PIL, win32api.
+It works with python 2.7 and needs the libraries: scikit-learn, PIL, win32api.
 
 You can watch it in action here: https://www.youtube.com/watch?v=18vqQOPlvO4
 
