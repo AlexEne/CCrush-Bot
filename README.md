@@ -19,4 +19,4 @@ It works with python 2.7 and needs the libraries: scikit-learn, PIL, win32api.
 
 You can watch it in action here: https://www.youtube.com/watch?v=18vqQOPlvO4
 
-There is a more in-depth explanation about how it works here: http://www.clickalot.me/2015/05/candy-crush-bot/
+There is a more in-depth explanation about how it works here: http://www.clickalot.me/candy-crush-bot/
