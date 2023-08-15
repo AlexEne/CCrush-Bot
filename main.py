@@ -60,8 +60,8 @@ def win32_click(x, y):
 
 
 def get_desktop_coords(cell):
-    x = board_box[0] + cell[1] * cell_size[0] + cell_size[0]/2
-    y = board_box[1] + cell[0] * cell_size[1] + cell_size[1]/2
+    x = int(board_box[0] + cell[1] * cell_size[0] + cell_size[0] / 2)
+    y = int(board_box[1] + cell[0] * cell_size[1] + cell_size[1] / 2)
     return x, y
 
 
