@@ -1,0 +1,5 @@
+Pillow
+Numpy
+pywin32
+sklearn
+scikit-learn

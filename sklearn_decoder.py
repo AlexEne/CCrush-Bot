@@ -1,6 +1,6 @@
 from sklearn import svm
-from sklearn import cross_validation
-from sklearn.externals import joblib
+from sklearn.model_selection import train_test_split
+import joblib
 from PIL import Image
 import os
 import numpy as np
@@ -69,16 +69,15 @@ class ImgRecognizer:
     def test(self):
         np_train_data = np.array(self.training_data)
         np_values = np.array(self.target_values)
-        data, test_data, train_target, test_target = cross_validation.train_test_split(np_train_data, np_values,
-                                                                                       test_size=0.4, random_state=0)
+        data, test_data, train_target, test_target = train_test_split(np_train_data, np_values,test_size=0.4, random_state=0)
         self.svc.fit(data, train_target)
-        print self.svc.score(test_data, test_target)
+        print(self.svc.score(test_data, test_target))
 
     def predict(self, img):
         resized_img = img.resize(self.downscale_res, Image.BILINEAR)
         np_img = np.array(resized_img.getdata()).flatten()
-        return int(self.svc.predict(np_img))
-
+        #return int(self.svc.predict(np_img))
+        return int(self.svc.predict(np_img.reshape(1, -1)))
 
 
 

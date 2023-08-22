@@ -8,5 +8,5 @@ board_dict = {0: 'blue          ', 1: 's_h_blue      ', 2: 'green         ', 3: 
 def print_board(board):
     for line in board:
         for elem in line:
-            print board_dict[elem] + ' ',
-        print
+            print(board_dict[elem] + ' ')
+        print()

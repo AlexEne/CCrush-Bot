@@ -60,8 +60,8 @@ def win32_click(x, y):
 
 
 def get_desktop_coords(cell):
-    x = board_box[0] + cell[1] * cell_size[0] + cell_size[0]/2
-    y = board_box[1] + cell[0] * cell_size[1] + cell_size[1]/2
+    x = int(board_box[0] + cell[1] * cell_size[0] + cell_size[0] / 2)
+    y = int(board_box[1] + cell[0] * cell_size[1] + cell_size[1] / 2)
     return x, y
 
 
@@ -106,7 +106,7 @@ def board_is_moving():
     global ref_img
     img = ImageGrab.grab()
     img = img.crop(board_box)
-    img = img.resize((img.size[0]/4, img.size[1]/4), Image.NEAREST)
+    img = img.resize((int(img.size[0]/4), int(img.size[1]/4)), Image.NEAREST)
 
     has_movement = True
     if ref_img:
@@ -133,32 +133,32 @@ def compare_images(current, reference, threshold):
         if not are_pixels_equal(current_data[i], ref_data[i], threshold):
             diff_pixels += 1
 
-    print diff_pixels
+    print(diff_pixels)
     return diff_pixels
 
 
 background_img = Image.open('background.bmp')
-background_img = background_img.resize((background_img.size[0]/4, background_img.size[1]/4), Image.NEAREST)
+background_img = background_img.resize((int(background_img.size[0]/4), int(background_img.size[1]/4)), Image.NEAREST)
 
 
 def main():
     recognizer.train()
     solver = simple_solver.SimpleSolver()
     img_end_game = Image.open('end_screen.bmp')
-    img_end_game = img_end_game.resize((img_end_game.size[0]/4, img_end_game.size[1]/4), Image.NEAREST)
+    img_end_game = img_end_game.resize((int(img_end_game.size[0] / 4), int(img_end_game.size[1] / 4)), Image.NEAREST)
     total_moves = 0
     while True:
         if not board_is_moving():
             board_img = grab_board()
-            board_img = board_img.resize((board_img.size[0]/4, board_img.size[1]/4), Image.NEAREST)
+            board_img = board_img.resize((int(board_img.size[0]/4), int(board_img.size[1]/4)), Image.NEAREST)
             if compare_images(board_img, img_end_game, 10) < 3000:
                 break
             score, move = solver.solve_board(game_board)
-            print '\nBest move found. Score = {0}, Move = {1}'.format(score, move)
+            print('\nBest move found. Score = {0}, Move = {1}'.format(score, move))
             do_move(move)
             total_moves += 1
         time.sleep(0.4)
-    print 'Total moves done: ' + str(total_moves)
+    print('Total moves done: ' + str(total_moves))
 
 
 if __name__ == '__main__':

@@ -1,0 +1,10 @@
+pip install -r requirements.txt
+
+Instrucciones de entorno:
+python -m venv nombre_entorno
+python3 -m venv nombre_entorno
+nombre_entorno\Scripts\activate
+source nombre_entorno/bin/activate
+deactivate
+
+
